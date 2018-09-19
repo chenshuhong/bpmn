@@ -1,8 +1,8 @@
 {
   "name": "bpmn",
   "version": "0.0.1",
-  "description": "bpmn二次开发\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D基于\u001b[Cbpmn工作引擎的二次开发",
-  "main": "sr/index.js",
+  "description": "bpmn工作流引擎的二次开发",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/chenshuhong/bpmn/issues"
   },
-  "homepage": "https://github.com/chenshuhong/bpmn#readme"
+  "homepage": "https://github.com/chenshuhong/bpmn#readme",
+  "devDependencies": {
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0"
+  }
 }
