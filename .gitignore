@@ -65,3 +65,6 @@ package-lock.json
 
 # idea
 .idea/
+
+# build dir
+dist/
