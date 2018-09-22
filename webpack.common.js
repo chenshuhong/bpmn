@@ -9,7 +9,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({title: 'Bpmn二次开发'})
+    new HtmlWebpackPlugin({
+      title: 'Bpmn二次开发',
+      template: './src/index.html'
+    })
   ],
   output: {
     filename: 'bundle.js',
@@ -27,6 +30,9 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: "babel-loader"
+    }, {
+      test: /\.(eot|svg|ttf|woff)$/,
+      loader: 'file-loader',
     }]
   }
 };
