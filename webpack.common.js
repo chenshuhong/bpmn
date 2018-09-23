@@ -21,10 +21,12 @@ module.exports = {
 
   module: {
     rules: [{
-      test: /\.css$/,
+      test: /\.(css|less)$/,
       use: [
         'style-loader',
-        'css-loader'
+        'css-loader',
+        'postcss-loader',
+        'less-loader'
       ]
     }, {
       test: /\.js$/,
