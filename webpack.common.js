@@ -15,10 +15,9 @@ module.exports = {
     })
   ],
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-
   module: {
     rules: [{
       test: /\.(css|less)$/,
