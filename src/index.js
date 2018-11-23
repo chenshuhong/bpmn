@@ -1,7 +1,7 @@
 import BpmnModeler from 'bpmn-js/lib/Modeler';
 import propertiesPanelModule from 'bpmn-js-properties-panel';
-//import propertiesProviderModule from 'bpmn-js-properties-panel/lib/provider/camunda';
-import propertiesProviderModule from './CustomPropertiesProvider';
+import propertiesProviderModule from 'bpmn-js-properties-panel/lib/provider/camunda';
+import customPropertiesProviderModule from './CustomPropertiesProvider';
 import camundaModdleDescriptor from 'camunda-bpmn-moddle/resources/camunda';
 import magicModdleDescriptor from './magic';
 import $ from 'jquery'
@@ -18,9 +18,10 @@ let bpmnModeler = new BpmnModeler({
   },
   additionalModules: [
     propertiesPanelModule,
-    propertiesProviderModule,
+	  customPropertiesProviderModule
   ],
   moddleExtensions: {
+	  camunda: camundaModdleDescriptor,
 	  magic: magicModdleDescriptor
   }
 });
@@ -39,6 +40,14 @@ function updateProperties(id,propertiy,defalutValue=''){
 }
 
 $(document).ready(function(){
+  $('#btn-console').click(function exportDiagram() {
+	  bpmnModeler.saveXML({ format: true }, function(err, xml) {
+		  if (err) {
+			  return console.error('could not save BPMN 2.0 diagram', err);
+		  }
+		  console.log(xml);
+	  });
+  })
   $('#properties-panel-parent').click(function (e) {
     let clickId = e.target.id
     if (clickId === 'camunda-assignee'){

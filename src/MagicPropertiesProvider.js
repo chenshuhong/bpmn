@@ -9,6 +9,7 @@ import eventProps from 'bpmn-js-properties-panel/lib/provider/bpmn/parts/EventPr
 import linkProps from 'bpmn-js-properties-panel/lib/provider/bpmn/parts/LinkProps';
 import documentationProps from 'bpmn-js-properties-panel/lib/provider/bpmn/parts/DocumentationProps';
 import idProps from 'bpmn-js-properties-panel/lib/provider/bpmn/parts/IdProps';
+import disableIdProps from './DisableIdProps';
 import nameProps from 'bpmn-js-properties-panel/lib/provider/bpmn/parts/NameProps';
 
 
@@ -25,7 +26,7 @@ function createGeneralTabGroups(element, bpmnFactory, elementRegistry, translate
     label: 'General',
     entries: []
   };
-  idProps(generalGroup, element, translate);
+	disableIdProps(generalGroup, element, translate);
   nameProps(generalGroup, element, translate);
   processProps(generalGroup, element, translate);
 
