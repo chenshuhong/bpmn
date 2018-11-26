@@ -1,9 +1,9 @@
 import BpmnModeler from 'bpmn-js/lib/Modeler';
 import propertiesPanelModule from 'bpmn-js-properties-panel';
-import propertiesProviderModule from 'bpmn-js-properties-panel/lib/provider/camunda';
-import customPropertiesProviderModule from './CustomPropertiesProvider';
+import customPropertiesProviderModule from './CustomPropertiesProviderModule';
 import camundaModdleDescriptor from 'camunda-bpmn-moddle/resources/camunda';
 import magicModdleDescriptor from './magic';
+import customTranslate from './customTranslate';
 import $ from 'jquery'
 import 'normalize.css'
 import './index.less'
@@ -11,6 +11,9 @@ import 'bpmn-js/dist/assets/diagram-js.css';
 import 'bpmn-font/dist/css/bpmn-embedded.css';
 import "bpmn-js-properties-panel/styles/properties.less";
 
+let customTranslateModule = {
+	translate: [ 'value', customTranslate ]
+};
 let bpmnModeler = new BpmnModeler({
   container: '#bpmn-canvas',
   propertiesPanel: {
@@ -18,7 +21,8 @@ let bpmnModeler = new BpmnModeler({
   },
   additionalModules: [
     propertiesPanelModule,
-	  customPropertiesProviderModule
+	  customPropertiesProviderModule,
+	  customTranslateModule
   ],
   moddleExtensions: {
 	  camunda: camundaModdleDescriptor,

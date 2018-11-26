@@ -1,10 +1,24 @@
-import MagicPropertiesProvider from './MagicPropertiesProvider';
+import CamundaPropertiesProvider from 'bpmn-js-properties-panel/lib/provider/camunda/CamundaPropertiesProvider'
+import inherits from 'inherits'
+import PropertiesActivator from 'bpmn-js-properties-panel/lib/PropertiesActivator'
 
-export default {
-	__depends__: [
-		require('bpmn-js-properties-panel/lib/provider/camunda/element-templates'),
-		require('diagram-js/lib/i18n/translate').default
-	],
-	__init__: [ 'propertiesProvider' ],
-	propertiesProvider: [ 'type', require('bpmn-js-properties-panel/lib/provider/camunda/CamundaPropertiesProvider') ]
-};
+function CustomPropertiesProvider(eventBus, bpmnFactory, elementRegistry, elementTemplates, translate) {
+	PropertiesActivator.call(this, eventBus);
+	
+	let camundaProvider = new CamundaPropertiesProvider(eventBus, bpmnFactory, elementRegistry, elementTemplates, translate);
+	this.getTabs = function (element) {
+		let results = camundaProvider.getTabs(element);
+		console.log(results)
+		return results;
+	}
+}
+CustomPropertiesProvider.$inject = [
+	'eventBus',
+	'bpmnFactory',
+	'elementRegistry',
+	'elementTemplates',
+	'translate'
+];
+
+inherits(CustomPropertiesProvider, PropertiesActivator);
+export default CustomPropertiesProvider
