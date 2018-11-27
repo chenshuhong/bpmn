@@ -1,7 +1,7 @@
 import Modeler from 'bpmn-js/lib/Modeler';
 import propertiesPanelModule from 'bpmn-js-properties-panel';
-import propertiesProviderModule from 'bpmn-js-properties-panel/lib/provider/camunda';
-import camundaModdleDescriptor from 'camunda-bpmn-moddle/resources/camunda';
+import customPropertiesProviderModule from './custom-property/CustomPropertiesProviderModule';
+//import camundaModdleDescriptor from 'camunda-bpmn-moddle/resources/camunda';
 import customTranslate from './customTranslate/customTranslate';
 import './app.less';
 import 'bpmn-js-properties-panel/styles/properties.less';
@@ -14,11 +14,17 @@ import inherits from 'inherits';
 
 import CustomModule from './custom-modeler/custom/index';
 
-
+// Our custom translation module
+// We need to use the array syntax that is used by bpmn-js internally
+// 'value' tells bmpn-js to use the function instead of trying to instanciate it
+let customTranslateModule = {
+	translate: [ 'value', customTranslate ]
+};
 export default function CustomModeler(options) {
   options.additionalModules={
-      propertiesPanelModule,
-      propertiesProviderModule
+  	propertiesPanelModule,
+	  customPropertiesProviderModule,
+	  customTranslateModule
   }
   Modeler.call(this, options);
 
@@ -27,26 +33,12 @@ export default function CustomModeler(options) {
 
 inherits(CustomModeler, Modeler);
 
-// Our custom translation module
-// We need to use the array syntax that is used by bpmn-js internally
-// 'value' tells bmpn-js to use the function instead of trying to instanciate it
-let customTranslateModule = {
-    translate: [ 'value', customTranslate ]
-};
-let additionalModules = [
-    propertiesPanelModule,
-    propertiesProviderModule,
-];
-let moddleExtensions = {
-    camunda: camundaModdleDescriptor
-};
 CustomModeler.prototype._modules = [].concat(
     CustomModeler.prototype._modules,
     [
         CustomModule
     ]
 )
-CustomModeler.prototype._moddleExtensions = Object.assign({},CustomModeler.prototype._moddleExtensions,moddleExtensions);
 
 /**
  * Add a single custom element to the underlying diagram
