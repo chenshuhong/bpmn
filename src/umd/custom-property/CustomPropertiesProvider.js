@@ -7,7 +7,7 @@ function CustomPropertiesProvider(eventBus, bpmnFactory, elementRegistry, elemen
 	
 	let camundaProvider = new CamundaPropertiesProvider(eventBus, bpmnFactory, elementRegistry, elementTemplates, translate);
 	this.getTabs = function (element) {
-		let results = camundaProvider.getTabs(element);
+		let results = camundaProvider.genptTabs(element);
 		/*console.log(results)
 		if (results&&results.length){
 			if(results[0].id === 'general'){
