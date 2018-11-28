@@ -214,5 +214,6 @@ export default {
   'Follow Up Date':'跟进日期',
   'In Mapping':'在映射中',
   'Out Mapping':'不在映射中',
+  'The follow up date as an EL expression (e.g. ${someDate} or an ISO date (e.g. 2015-06-26T09:54:00)':'跟进日期为EL表达式（例如 ${someDate} 或ISO日期（例如 2015-06-26T09:54:00）',
   'The due date as an EL expression (e.g. ${someDate} or an ISO date (e.g. 2015-06-26T09:54:00)':'截止日期为EL表达式(例如${someDate}或者ISO日期(例如2015-06-26T09:54:00)',
 };

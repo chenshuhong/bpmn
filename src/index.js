@@ -2,7 +2,6 @@ import BpmnModeler from 'bpmn-js/lib/Modeler';
 import propertiesPanelModule from 'bpmn-js-properties-panel';
 import customPropertiesProviderModule from './CustomPropertiesProviderModule';
 import camundaModdleDescriptor from 'camunda-bpmn-moddle/resources/camunda';
-import magicModdleDescriptor from './magic';
 import customTranslate from './customTranslate';
 import $ from 'jquery'
 import 'normalize.css'
