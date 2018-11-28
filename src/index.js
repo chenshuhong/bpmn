@@ -25,7 +25,7 @@ let bpmnModeler = new BpmnModeler({
 	  customTranslateModule
   ],
   moddleExtensions: {
-	  //camunda: camundaModdleDescriptor,
+	  camunda: camundaModdleDescriptor,
   }
 });
 bpmnModeler.createDiagram()
