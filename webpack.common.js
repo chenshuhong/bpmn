@@ -8,7 +8,7 @@ module.exports = {
     contentBase: './dist'
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    //new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Bpmn二次开发',
       template: './src/index.html'

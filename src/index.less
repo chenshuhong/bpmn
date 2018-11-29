@@ -17,9 +17,17 @@ html,body,#bpmn-canvas{
   border-left: 1px solid #ccc;
   overflow: auto;
   font-size: 12px;
-  div[data-entry="id"],div[data-group="candidateStarterConfiguration"]{
+  div[data-entry="id"],div[data-group="candidateStarterConfiguration"],
+  div[data-group="tasklist"],div[data-group="externalTaskConfiguration"],
+  div[data-group="jobConfiguration"],div[data-group="historyConfiguration"],
+  div[data-group="async"],div[data-entry="dueDate"],
+  div[data-entry="followUpDate"],div[data-entry="priority"]{
     display: none;
   }
+}
+
+.bpmn-icon-data-object,.bpmn-icon-subprocess-expanded,.bpmn-icon-data-store,.bpmn-icon-participant{
+  display: none;
 }
 
 #btn-console{
