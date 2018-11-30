@@ -3,6 +3,7 @@ export default {
   // Labels
   'Activate the global connect tool' : '激活全局连接工具',
   'Append {type}': '追加 {type}',
+	'Append Gateway': '追加 网关',
   'Add Lane above': '在上面添加泳道',
   'Divide into two Lanes': '分为两个泳道',
   'Divide into three Lanes': '分为三个泳道',

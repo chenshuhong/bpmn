@@ -21,13 +21,50 @@ html,body,#bpmn-canvas{
   div[data-group="tasklist"],div[data-group="externalTaskConfiguration"],
   div[data-group="jobConfiguration"],div[data-group="historyConfiguration"],
   div[data-group="async"],div[data-entry="dueDate"],
-  div[data-entry="followUpDate"],div[data-entry="priority"]{
+  div[data-entry="followUpDate"],div[data-entry="priority"],
+  div[data-entry="versionTag"],div[data-entry="process-is-executable"]{
     display: none;
+  }
+  .bpp-properties-radio-container{
+    margin-top: 8px;
+    .bpp-properties-radio-explain{
+      display: inline-block;
+      position: relative;
+      i{
+        font-style: normal;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        width: 17px;
+        height: 17px;
+        text-align: center;
+        line-height: 16px;
+        color: #999;
+        transform: scale(0.8, 0.8);
+      }
+      span{
+        display: none;
+        position: absolute;
+        top: -58px;
+        right: -276px;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 275px;
+      }
+      &:hover{
+        span{
+          display:inline;
+        }
+      }
+    }
   }
 }
 
-.bpmn-icon-data-object,.bpmn-icon-subprocess-expanded,.bpmn-icon-data-store,.bpmn-icon-participant{
-  display: none;
+.bpmn-icon-data-object,.bpmn-icon-subprocess-expanded,.bpmn-icon-data-store,.bpmn-icon-participant,.bpmn-icon-intermediate-event-none{
+  display: none!important;
 }
 
 #btn-console{

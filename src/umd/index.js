@@ -11,6 +11,19 @@ import inherits from 'inherits';
 // Our custom translation module
 // We need to use the array syntax that is used by bpmn-js internally
 // 'value' tells bmpn-js to use the function instead of trying to instanciate it
+camundaModdleDescriptor.types.push({
+	"name": "BewitchedStartEvent",
+	"extends": [
+		"bpmn:UserTask"
+	],
+	"properties": [
+		{
+			"name": "nodeType",
+			"isAttr": true,
+			"type": "String"
+		}
+	]
+})
 let customTranslateModule = {
 	translate: [ 'value', customTranslate ]
 };

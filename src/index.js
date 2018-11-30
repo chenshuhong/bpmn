@@ -10,6 +10,19 @@ import 'bpmn-js/dist/assets/diagram-js.css';
 import 'bpmn-font/dist/css/bpmn-embedded.css';
 import "bpmn-js-properties-panel/styles/properties.less";
 
+camundaModdleDescriptor.types.push({
+	"name": "BewitchedStartEvent",
+	"extends": [
+		"bpmn:UserTask"
+	],
+	"properties": [
+		{
+			"name": "nodeType",
+			"isAttr": true,
+			"type": "String"
+		}
+	]
+})
 let customTranslateModule = {
 	translate: [ 'value', customTranslate ]
 };
