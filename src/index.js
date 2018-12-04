@@ -82,18 +82,6 @@ $(document).ready(function(){
       updateProperties(camundaId,'camunda:candidateGroups',defaultValue)
     }
   })
-  $ ('#bt-xml').click(function (e) {
-    bpmnModeler.saveXML({
-      format: true
-    }, function (err, xml) {
-      if (err) {
-        console.error(err);
-      } else {
-        console.log(xml);
-      }
-    });
-    e.preventDefault();
-  })
 });
 
 

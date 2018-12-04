@@ -119,7 +119,7 @@ a:link {
   top: 0;
   bottom: 0;
   right: 0;
-  width: 260px;
+  width: 400px;
   z-index: 10;
   border-left: 1px solid #ccc;
   overflow: auto;
@@ -155,6 +155,22 @@ a:link {
         line-height: 16px;
         color: #999;
         transform: scale(0.8, 0.8);
+      }
+      span{
+        display: none;
+        position: absolute;
+        top: -58px;
+        right: -276px;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 275px;
+      }
+      &:hover{
+        span{
+          display:inline-block;
+        }
       }
     }
   }
