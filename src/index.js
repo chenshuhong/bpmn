@@ -20,6 +20,11 @@ camundaModdleDescriptor.types.push({
 			"name": "nodeType",
 			"isAttr": true,
 			"type": "String"
+		},
+		{
+			"name": "selected",
+			"isAttr": true,
+			"type": "String"
 		}
 	]
 })
@@ -70,6 +75,7 @@ $(document).ready(function(){
       let camundaId = $('#camunda-id').val()
       let defaultValue = $('#camunda-assignee').val()
       updateProperties(camundaId,'camunda:assignee',defaultValue)
+      updateProperties(camundaId,'camunda:selected',JSON.stringify([{userId:'123456',userName:'csh'}]))
     }else if (clickId === 'camunda-candidateUsers'){
       console.log('camunda-candidateUsers click')
       let camundaId = $('#camunda-id').val()

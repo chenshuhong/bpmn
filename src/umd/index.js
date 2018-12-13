@@ -21,6 +21,10 @@ camundaModdleDescriptor.types.push({
 			"name": "nodeType",
 			"isAttr": true,
 			"type": "String"
+		},{
+			"name": "selected",
+			"isAttr": true,
+			"type": "String"
 		}
 	]
 })
